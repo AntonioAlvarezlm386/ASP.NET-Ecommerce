@@ -5,6 +5,10 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommece", "Ecommece\Ecommece.csproj", "{EF9DDB98-DC96-4ED3-9685-1AD1F9F1FD13}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{3B760491-85C2-4625-949D-F68BFF973F36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminPanel", "AdminPanel\AdminPanel.csproj", "{670B1368-2524-4EFE-ADCB-DCFCD91B82FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,10 @@ Global
 		{EF9DDB98-DC96-4ED3-9685-1AD1F9F1FD13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF9DDB98-DC96-4ED3-9685-1AD1F9F1FD13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF9DDB98-DC96-4ED3-9685-1AD1F9F1FD13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{670B1368-2524-4EFE-ADCB-DCFCD91B82FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670B1368-2524-4EFE-ADCB-DCFCD91B82FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670B1368-2524-4EFE-ADCB-DCFCD91B82FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670B1368-2524-4EFE-ADCB-DCFCD91B82FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
