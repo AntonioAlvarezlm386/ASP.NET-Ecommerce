@@ -10,8 +10,8 @@ namespace EntityLayout
     {
         public int PRODUCT_ID { get; set; }
         public string DESCRIPTION { get; set; }
-        public Brand oBRAND { get; set; }
-        public Category oCATEGORY { get; set; }
+        public int BRAND_ID { get; set; }
+        public int CATEGORY_ID { get; set; }
         public decimal PRICE { get; set; }
         public int STOCK { get; set; }
         public string IMG_PATH { get; set; }
@@ -19,5 +19,9 @@ namespace EntityLayout
         public bool AVAILABLE { get; set; }
         public DateTime CREATED_AT { get; set; }
 
+        public virtual Brand BRAND { get; set; }
+        public virtual Category CATEGORY { get; set; }
+        public virtual ICollection<ShopCart> SHOPCARTS {  get; set; }    
+        public virtual ICollection<SaleDetail> SALE_DETAILS { get; set; }
     }
 }

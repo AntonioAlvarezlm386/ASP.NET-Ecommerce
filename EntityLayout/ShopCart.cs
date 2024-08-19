@@ -9,8 +9,10 @@ namespace EntityLayout
     public class ShopCart
     {
         public int CART_ID { get; set; }
-        public Client oCLIENT { get; set; }
-        public Product oPRODUCT { get; set; }
+        public int CLIENT_ID { get; set; }
+        public int PRODUCT_ID { get; set; }
         public int ITEMS { get; set; }
+        public virtual Client CLIENT { get; set; }
+        public virtual ICollection<Product> PRODUCTS { get; set; }
     }
 }

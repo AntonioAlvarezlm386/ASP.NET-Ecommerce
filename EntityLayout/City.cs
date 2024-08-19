@@ -8,8 +8,10 @@ namespace EntityLayout
 {
     public class City
     {
-        public int CITY_ID { get; set; }
+        public string CITY_ID { get; set; }
         public string DESCRIPTION { get; set; }
-        public State oSTATE { get; set; }
+        public string STATE_ID {  get; set; }
+        public virtual State STATE { get; set; }
+        public virtual ICollection<Locality> LOCALITIES { get; set; }   
     }
 }

@@ -201,6 +201,16 @@
     <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BussinesLayout\BussinesLayout.csproj">
+      <Project>{cd9975a4-18d2-49e1-bf6e-2e760077ac1b}</Project>
+      <Name>BussinesLayout</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityLayout\EntityLayout.csproj">
+      <Project>{309896d1-e81b-462c-9b10-fe263ac83ef0}</Project>
+      <Name>EntityLayout</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

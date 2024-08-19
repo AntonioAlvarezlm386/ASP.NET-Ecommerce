@@ -12,5 +12,6 @@ namespace EntityLayout
         public string DESCRIPTION { get; set; }
         public bool AVAILABLE { get; set; }
         public DateTime CREATED_AT { get; set; }
+        public virtual ICollection<Product> PRODUCTS {  get; set; }
     }
 }

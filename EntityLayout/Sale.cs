@@ -18,6 +18,7 @@ namespace EntityLayout
         public string ADDRESS { get; set; }
         public string TRANS_ID { get; set; }
         public DateTime CREATED_AT { get; set; }
-
+        public virtual Client CLIENT { get; set; }
+        public virtual ICollection<SaleDetail> SALE_DETAIL { get; set; }
     }
 }

@@ -6,19 +6,21 @@ using System.Web.Mvc;
 
 namespace AdminPanel.Controllers
 {
-    public class HomeController : Controller
+    public class ManagementController : Controller
     {
-
-        public ActionResult Index()
+        public ActionResult Category()
         {
             return View();
         }
 
-        public ActionResult Users()
+        public ActionResult Brand()
         {
             return View();
         }
 
-        
+        public ActionResult Product()
+        {
+            return View();
+        }
     }
 }
