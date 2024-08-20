@@ -16,7 +16,7 @@ namespace EntityLayout
         public string PASSWORD { get; set; }
         public bool RESET_PSWD { get; set; }
         public DateTime CREATED_AT { get; set; }
-        public virtual ICollection<ShopCart> SHOPCART {  get; set; }
-        public virtual ICollection<Sale> SALE { get; set; }
+        public virtual ICollection<ShopCart> SHOPCARTS {  get; set; }
+        public virtual ICollection<Sale> SALES { get; set; }
     }
 }

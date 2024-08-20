@@ -14,5 +14,6 @@ namespace EntityLayout
         public string STATE_ID { get; set; }   
         public virtual State STATE { get; set; }
         public virtual City CITY { get; set; }
+        public virtual ICollection<Sale> SALES { get; set; }    
     }
 }

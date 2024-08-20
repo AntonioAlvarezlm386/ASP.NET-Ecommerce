@@ -13,6 +13,6 @@ namespace EntityLayout
         public int PRODUCT_ID { get; set; }
         public int ITEMS { get; set; }
         public virtual Client CLIENT { get; set; }
-        public virtual ICollection<Product> PRODUCTS { get; set; }
+        public virtual Product PRODUCT { get; set; }
     }
 }

@@ -39,117 +39,43 @@ namespace DataLayuot
             // ShoppCart configuration
             modelBuilder.Entity<ShopCart>()
                 .HasRequired(sc => sc.CLIENT_ID)
-                .WithMany(c => c.);
+                .WithMany(c => c.SHOP_CARTS)
+                .HasForeignKey(sc => sc.CLIENT_ID);
 
-                .HasForeignKey(sc => sc.ClientId);
             modelBuilder.Entity<ShoppCart>()
-                .HasRequired(sc => sc.Product)
-                .WithMany(p => p.ShoppCarts)
-                .HasForeignKey(sc => sc.ProductId);
+                .HasRequired(sc => sc.PRODUCT)
+                .WithMany(p => p.SHOPCARTS)
+                .HasForeignKey(sc => sc.PRODUCT_ID);
 
             // Sale configuration
             modelBuilder.Entity<Sale>()
-                .HasKey(s => s.SaleId);
+                .HasRequired(s => s.CLIENT)
+                .WithMany(c => c.SALES)
+                .HasForeignKey(s => s.CLIENT_ID);
+
             modelBuilder.Entity<Sale>()
-                .Property(s => s.SaleId)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            modelBuilder.Entity<Sale>()
-                .Property(s => s.Total)
-                .HasPrecision(10, 2);
-            modelBuilder.Entity<Sale>()
-                .Property(s => s.Contact)
-                .HasMaxLength(50);
-            modelBuilder.Entity<Sale>()
-                .Property(s => s.LocalitysId)
-                .HasMaxLength(10);
-            modelBuilder.Entity<Sale>()
-                .Property(s => s.Phone)
-                .HasMaxLength(50);
-            modelBuilder.Entity<Sale>()
-                .Property(s => s.Address)
-                .HasMaxLength(500);
-            modelBuilder.Entity<Sale>()
-                .Property(s => s.TransId)
-                .HasMaxLength(50);
-            modelBuilder.Entity<Sale>()
-                .Property(s => s.CreatedAt)
-                .HasDefaultValueSql("GETDATE()");
-            modelBuilder.Entity<Sale>()
-                .HasRequired(s => s.Client)
-                .WithMany(c => c.Sales)
-                .HasForeignKey(s => s.ClientId);
+                .HasRequired(s => s.LOCALITY)
+                .WithMany(l = l.SALES)
+                .HasForeignKey(s => s.LOCALITY_ID)
 
             // SaleDetail configuration
             modelBuilder.Entity<SaleDetail>()
-                .HasKey(sd => sd.DETAIL_ID);
+                .HasRequired(sd => sd.SALE)
+                .WithMany(s => s.SALE_DETAILS)
+                .HasForeignKey(sd => sd.SALE_ID);
 
             modelBuilder.Entity<SaleDetail>()
-                .Property(sd => sd.DETAIL_ID)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            
-            modelBuilder.Entity<SaleDetail>()
-                .Property(sd => sd.TOTAL)
-                .HasPrecision(10, 2);
-
-            modelBuilder.Entity<SaleDetail>()
-                .HasRequired(sd => sd.)
-                .WithMany(s => s.SaleDetails)
-                .HasForeignKey(sd => sd.SaleId);
-            modelBuilder.Entity<SaleDetail>()
-                .HasRequired(sd => sd.Product)
-                .WithMany(p => p.SaleDetails)
-                .HasForeignKey(sd => sd.ProductId);
-
-
-            // State configuration 
-            modelBuilder.Entity<State>()
-                .HasKey(s => s.STATE_ID);
-
-            modelBuilder.Entity<State>()
-                .Property(s => s.STATE_ID)
-                .HasMaxLength(2)
-                .IsFixedLength()
-                .IsRequired();
-
-            modelBuilder.Entity<State>()
-                .Property(s => s.DESCRIPTION)
-                .HasMaxLength(45)
-                .IsRequired();
+                .HasRequired(sd => sd.PRODUCT)
+                .WithMany(p => p.SALE_DETAIS)
+                .HasForeignKey(sd => sd.PRODUCT_ID);
 
             //City configuration
-            modelBuilder.Entity<City>()
-                .HasKey(c => c.CITY_ID);
-
-            modelBuilder.Entity<City>()
-                .Property(c => c.CITY_ID)
-                .HasMaxLength(4)
-                .IsFixedLength()
-                .IsRequired();
-
-            modelBuilder.Entity<City>()
-                .Property(c => c.DESCRIPTION)
-                .HasMaxLength(45);
-
             modelBuilder.Entity<City>()
                 .HasRequired(c => c.STATE)
                 .WithMany(s => s.CITIES)
                 .HasForeignKey(c => c.STATE_ID);
 
             // Locality configuration
-            modelBuilder.Entity<Locality>()
-                .HasKey(l => l.LOCALITY_ID);
-
-            modelBuilder.Entity<Locality>()
-                .Property(l => l.LOCALITY_ID)
-                .HasMaxLength(6)
-                .IsFixedLength()
-                .IsRequired();
-
-            modelBuilder.Entity<Locality>()
-                .Property(l => l.DESCRIPTION)
-                .HasMaxLength(45)
-                .IsRequired();
-
             modelBuilder.Entity<Locality>()
                 .HasRequired(l => l.STATE)
                 .WithMany(s => s.LOCALITIES)

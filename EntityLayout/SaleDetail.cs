@@ -9,9 +9,11 @@ namespace EntityLayout
     public class SaleDetail
     {
         public int DETAIL_ID { get; set; }
-        public Sale oSALE { get; set; }
-        public Product oPRODUCT { get; set; }
+        public int SALE_ID { get; set; }
+        public int PRODUCT_ID { get; set; }
         public int ITEMS {  get; set; }
         public decimal TOTAL { get; set; }
+        public virtual Product PRODUCT { get; set; }
+        public virtual Sale SALE { get; set; }
     }
 }
