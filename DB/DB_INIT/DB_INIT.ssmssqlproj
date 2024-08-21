@@ -3,7 +3,22 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="DESKTOP-IETNBCB\SQLEXPRESS:DESKTOP-IETNBCB\Antonio">
+        <ConnectionNode Name="DESKTOP-A2VOAQG\SQLEXPRESS:DESKTOP-A2VOAQG\Antonio">
+          <Created>2024-08-19T21:28:04.4566534-06:00</Created>
+          <Type>SQL</Type>
+          <Server>DESKTOP-A2VOAQG\SQLEXPRESS</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>True</TrustServerCertificate>
+          <HostNameInServerCertificate />
+          <EncryptionOption>False</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+        <ConnectionNode Name="DESKTOP-IETNBCB\SQLEXPRESS:DESKTOP-A2VOAQG\Antonio">
           <Created>2024-08-17T19:20:50.4672907-06:00</Created>
           <Type>SQL</Type>
           <Server>DESKTOP-IETNBCB\SQLEXPRESS</Server>
@@ -23,14 +38,14 @@
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
         <FileNode Name="DB_INIT.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-IETNBCB\SQLEXPRESS:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-IETNBCB\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-A2VOAQG\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-A2VOAQG\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>DB_INIT.sql</FullPath>
         </FileNode>
         <FileNode Name="DB_SEED.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-IETNBCB\SQLEXPRESS:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>DESKTOP-IETNBCB\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-A2VOAQG\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-A2VOAQG\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>DB_SEED.sql</FullPath>
         </FileNode>

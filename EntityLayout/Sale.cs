@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayout
 {
-    public class Sale
+    public class SALE
     {
         public int SALE_ID { get; set; }
         public int  CLIENT_ID { get; set; }
@@ -18,8 +18,8 @@ namespace EntityLayout
         public string ADDRESS { get; set; }
         public string TRANS_ID { get; set; }
         public DateTime CREATED_AT { get; set; }
-        public virtual Client CLIENT { get; set; }
-        public virtual Locality LOCALITY { get; set; }
-        public virtual ICollection<SaleDetail> SALE_DETAILS { get; set; }
+        public virtual CLIENT CLIENT { get; set; }
+        public virtual LOCALITY LOCALITY { get; set; }
+        public virtual ICollection<SALE_DETAIL> SALE_DETAILS { get; set; }
     }
 }

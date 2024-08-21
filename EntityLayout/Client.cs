@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayout
 {
-    public class Client
+    public class CLIENT
     {
         public int CLIENT_ID { get; set; }
         public string NAME { get; set; }
@@ -16,7 +16,7 @@ namespace EntityLayout
         public string PASSWORD { get; set; }
         public bool RESET_PSWD { get; set; }
         public DateTime CREATED_AT { get; set; }
-        public virtual ICollection<ShopCart> SHOPCARTS {  get; set; }
-        public virtual ICollection<Sale> SALES { get; set; }
+        public virtual ICollection<SHOPP_CART> SHOPCARTS {  get; set; }
+        public virtual ICollection<SALE> SALES { get; set; }
     }
 }

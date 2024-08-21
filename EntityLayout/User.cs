@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayout
 {
-    public class User
+    public class USER
     {
         public int USER_ID { get; set; }
         public string NAME { get; set; }

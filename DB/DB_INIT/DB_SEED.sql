@@ -61,3 +61,5 @@ VALUES
 	('030202','Saa Antonio','0302','02')
 
 
+INSERT INTO PRODUCT(NAME, DESCRIPTION, BRAND_ID, CATEGORY_ID, PRICE, STOCK, IMG_PATH, IMG_NAME)
+VALUES ('Produto test', 'Producto para prueba de repositorio', 1003,1002, 23.45, 34, 'ruta_de_imagen', 'imagen_prueba')
