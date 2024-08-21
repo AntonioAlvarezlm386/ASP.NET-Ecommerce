@@ -209,11 +209,11 @@
     <Content Include="Scripts\jquery-3.7.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BussinesLayout\BussinesLayer.csproj">
+    <ProjectReference Include="..\BussinesLayer\BussinesLayer.csproj">
       <Project>{cd9975a4-18d2-49e1-bf6e-2e760077ac1b}</Project>
       <Name>BussinesLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EntityLayout\EntityLayer.csproj">
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
       <Project>{309896d1-e81b-462c-9b10-fe263ac83ef0}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
