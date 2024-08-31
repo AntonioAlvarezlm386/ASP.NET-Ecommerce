@@ -150,7 +150,6 @@ ClientBin/
 *.pfx
 *.publishsettings
 orleans.codegen.cs
-web.config
 
 # SQL Server files
 *.mdf
