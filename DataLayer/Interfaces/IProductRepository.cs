@@ -1,14 +1,9 @@
 ﻿using EntityLayer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DataLayuot.Interfaces
+namespace DataLayer.Interfaces
 {
-    internal interface IProductRepository : IGenericRepository<PRODUCT>
+    public interface IProductRepository : IGenericRepository<PRODUCT>
     {
-        
+
     }
 }

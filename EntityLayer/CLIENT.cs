@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EntityLayer
 {
@@ -16,7 +12,7 @@ namespace EntityLayer
         public string PASSWORD { get; set; }
         public bool RESET_PSWD { get; set; }
         public DateTime CREATED_AT { get; set; }
-        public virtual ICollection<SHOPP_CART> SHOPCARTS {  get; set; }
+        public virtual ICollection<SHOPP_CART> SHOPCARTS { get; set; }
         public virtual ICollection<SALE> SALES { get; set; }
     }
 }

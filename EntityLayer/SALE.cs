@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EntityLayer
 {
     public class SALE
     {
         public int SALE_ID { get; set; }
-        public int  CLIENT_ID { get; set; }
-        public int ITEMS { get; set; } 
+        public int CLIENT_ID { get; set; }
+        public int ITEMS { get; set; }
         public decimal TOTAL { get; set; }
         public string CONTACT { get; set; }
         public string LOCALITY_ID { get; set; }

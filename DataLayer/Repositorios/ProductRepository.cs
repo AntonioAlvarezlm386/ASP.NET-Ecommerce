@@ -1,13 +1,9 @@
-﻿using DataLayuot.Interfaces;
-using System;
+﻿using DataLayer.Interfaces;
+using EntityLayer;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EntityLayer;
-using System.Security.Cryptography.X509Certificates;
 
-namespace DataLayuot.Repositorios
+namespace DataLayer.Repositorios
 {
     public class ProductRepository : IProductRepository
     {
@@ -21,9 +17,7 @@ namespace DataLayuot.Repositorios
 
         public IEnumerable<PRODUCT> GetAll()
         {
-            var products = new List<PRODUCT>();
-            products = _db.PRODUCT.ToList();
-
+            List<PRODUCT> products = _db.PRODUCT.ToList();
             return products;
         }
 
@@ -66,7 +60,7 @@ namespace DataLayuot.Repositorios
         {
             var dbProduct = new PRODUCT();
             dbProduct = _db.PRODUCT.Find(id);
-            if(dbProduct != null)
+            if (dbProduct != null)
             {
                 _db.PRODUCT.Remove(dbProduct);
                 _db.SaveChanges();

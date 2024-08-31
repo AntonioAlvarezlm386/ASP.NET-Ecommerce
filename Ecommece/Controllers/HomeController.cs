@@ -1,27 +1,25 @@
-﻿using System;
+﻿using BussinesLayer.Interfaces;
+using EntityLayer;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using EntityLayer;
-using BussinesLayer;
 
 namespace Ecommece.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ProductService _productService;
+        private readonly IProductService _productService;
 
-        public HomeController()
+        public HomeController(IProductService productService)
         {
-            _productService = new ProductService();
+            _productService = productService;
         }
 
 
         public ActionResult Index()
         {
-            var Products = _productService.Products();
-            return View(Products);
+            List<PRODUCT> products = _productService.GetAllProducts().ToList();
+            return View(products);
         }
 
         public ActionResult About()

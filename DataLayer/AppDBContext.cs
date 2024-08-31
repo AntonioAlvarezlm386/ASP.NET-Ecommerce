@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EntityLayer;
 using System.Data.Entity;
-using EntityLayer;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace DataLayuot
+namespace DataLayer
 {
     public class AppDBContext : DbContext
     {
         public AppDBContext() : base("name=EcommerceDB")
         {
         }
-         
+
         public DbSet<USER> USER { get; set; }
         public DbSet<CATEGORY> CATEGORY { get; set; }
         public DbSet<BRAND> BRAND { get; set; }
@@ -138,5 +132,5 @@ namespace DataLayuot
         }
 
 
-    } 
+    }
 }

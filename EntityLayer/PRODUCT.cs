@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EntityLayer
 {
@@ -22,7 +19,7 @@ namespace EntityLayer
 
         public virtual BRAND BRAND { get; set; }
         public virtual CATEGORY CATEGORY { get; set; }
-        public virtual ICollection<SHOPP_CART> SHOPCARTS {  get; set; }    
+        public virtual ICollection<SHOPP_CART> SHOPCARTS { get; set; }
         public virtual ICollection<SALE_DETAIL> SALE_DETAILS { get; set; }
     }
 }
