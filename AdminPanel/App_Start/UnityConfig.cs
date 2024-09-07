@@ -21,6 +21,9 @@ namespace AdminPanel
 
             container.RegisterType<IProductService, ProductService>();
             container.RegisterType<IProductRepository, ProductRepository>();
+
+            container.RegisterType<IUserRepository, UserRepository>();
+            container.RegisterType<IUserService, UserService>();
             
             
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));

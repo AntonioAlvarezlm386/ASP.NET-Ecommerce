@@ -6,8 +6,8 @@ namespace DataLayer.Interfaces
     {
         IEnumerable<T> GetAll();
         T GetById(int id);
-        void Create(T entity);
-        void Update(T entity, int id);
-        void Delete(int id);
+        bool Create(T entity);
+        bool Update(T entity, int id);
+        bool Delete(int id);
     }
 }

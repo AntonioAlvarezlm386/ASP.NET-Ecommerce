@@ -2,6 +2,7 @@
 using DataLayer.Interfaces;
 using EntityLayer;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BussinesLayer.Services
 {
@@ -16,7 +17,7 @@ namespace BussinesLayer.Services
 
         public IEnumerable<PRODUCT> GetAllProducts()
         {
-            IEnumerable<PRODUCT> products = _productRepository.GetAll();
+            List<PRODUCT> products = _productRepository.GetAll().ToList();
 
             return products;
         }
