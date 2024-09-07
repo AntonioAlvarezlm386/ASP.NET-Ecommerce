@@ -17,8 +17,7 @@ namespace AdminPanel.Controllers
 
         public ActionResult Index()
         {
-            List<PRODUCT> products = _productService.GetAllProducts().ToList();
-            return View(products);
+            return View();
         }
 
         public ActionResult Users()

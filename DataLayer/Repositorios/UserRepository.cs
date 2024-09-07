@@ -21,15 +21,7 @@ namespace DataLayer.Repositorios
 
         public IEnumerable<USER> GetAll()
         {
-            try
-            {
-                List<USER> usersDb = _context.USER.ToList();
-
-                return usersDb;
-            } catch(Exception ex)
-            {
-                return Enumerable.Empty<USER>();
-            }
+                return _context.USER.ToList();
         }
 
         public USER GetById(int id)
