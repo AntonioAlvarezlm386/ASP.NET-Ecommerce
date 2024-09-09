@@ -22,6 +22,9 @@ bld/
 !**/packages/build/
 *.nuget.props
 *.nuget.targets
+**/bower_components/*
+**/Scripts/*
+**/Content/*
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
