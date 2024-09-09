@@ -1,0 +1,8 @@
+﻿@model EntityLayer.USER
+
+<form id="create-user-form" method="post" action="@Url.Action("EditUser", "Home")">
+    <div class="form-group">
+        @Html.LabelFor(model => model.NAME)
+        @Html.TextBoxFor(model => model.NAME, new { @class = "form-control" })
+    </div>
+</form>

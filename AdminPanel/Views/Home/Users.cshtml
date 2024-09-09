@@ -1,8 +1,101 @@
-﻿
+﻿@model List<EntityLayer.USER>
+
 @{
     ViewBag.Title = "Users";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Users Page</h2>
+<ol class="breadcrumb mb-4 mt-4">
+    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Inicio</a></li>
+    <li class="breadcrumb-item active">Usuarios</li>
+</ol>
 
+<div class="card">
+    <div class="card-header">
+        <i class="fa fa-users"></i> Lista de Usuarios
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-success" onclick="openModal()"> <i class="fa fa-plus"></i> Crear usuario</button>
+            </div>
+        </div>
+        <hr />
+        <table class="display" id="usersTable" style="width: 100%">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Activo</th>
+                    <th scope="col">Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td scope="row">@user.NAME</td>
+                        <td>@user.LAST_NAME</td>
+                        <td>@user.EMAIL</td>
+                        <td>@(user.ACTIVE? "SI" : "NO")</td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm btn-edit" data-user-id="@user.USER_ID"><i class="fa fa-edit"></i></button>
+                            <button type="button" class="btn btn-danger btn-sm btn-delete"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@* Modal *@
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Usuario</h1>
+            </div>
+            <div class="modal-body" id="form-content">
+                @* Form from Controller *@
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-save"></i> Guardar</button>
+                <button type="button" class="btn btn-primary"><i class="fa fa-window-close"></i> Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts{
+    <script>
+        var table;
+        $(document).ready(function () {
+            table = $('#usersTable').DataTable({
+                responsive: true,
+                ordering: true,
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/2.1.5/i18n/es-MX.json"
+                }
+            });
+        })
+
+        function openModal() {
+            $('#formModal').modal("show");
+        }
+
+        $('#usersTable').on('click', '.btn-edit', function () {
+            var userId = $(this).data("userId");
+
+            $.get('@Url.Action("EditUser", "Home")', { id: userId }, function (data) {
+                $('#form-content').html(data);
+            });
+
+            openModal();
+        });
+    </script>
+}

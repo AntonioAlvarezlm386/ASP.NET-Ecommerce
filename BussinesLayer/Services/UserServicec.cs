@@ -1,12 +1,11 @@
 ﻿using BussinesLayer.Interfaces;
 using EntityLayer;
 using DataLayer.Interfaces;
-using System;
 using System.Collections.Generic;
+using BussinesLayer.Common;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.Remoting.Messaging;
+using System;
 
 namespace BussinesLayer.Services
 {
@@ -19,32 +18,68 @@ namespace BussinesLayer.Services
             _userRepository = userRepository;
         }
 
-        public IEnumerable<USER> GetAllUsers()
+        public Result<List<USER>> GetAllUsers()
         {
-            IEnumerable<USER> users = _userRepository.GetAll();
-            return users;
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            try
+            {
+                List<USER> users = _userRepository.GetAll().ToList();
+                stopwatch.Stop();
+
+                return Result<List<USER>>.Succes(users, null, stopwatch.ElapsedMilliseconds);
+            } catch (Exception ex)
+            {
+                stopwatch.Stop();
+
+                return Result<List<USER>>.Failure(
+                    "Error al obtener usuarios",
+                    500,
+                    "USR001",
+                    "Critical",
+                    ex,
+                    stopwatch.ElapsedMilliseconds
+                    );
+            }
         }
 
-        public USER GetUserById(int id)
+        public Result<USER> GetUserById(int id)
         {
-            USER userDb = _userRepository.GetById(id);
-            return userDb;
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            try
+            {
+                USER user = _userRepository.GetById(id);
+                stopwatch.Stop();
+
+                return Result<USER>.Succes(user, null, stopwatch.ElapsedMilliseconds);
+            } catch (Exception ex)
+            {
+                stopwatch.Stop();
+
+                return Result<USER>.Failure(
+                    "Error al obtner el usuario",
+                    500,
+                    "USR002",
+                    "Critical",
+                    ex,
+                    stopwatch.ElapsedMilliseconds
+                    );
+            };
         }
 
-        public void CreateUser(USER user) 
-        {
-            _userRepository.Create(user);
-        }
+        //public Result<object> CreateUser(USER user) 
+        //{
+        //    _userRepository.Create(user);
+        //}
 
-        public void UpdateUser(USER user, int id)
-        {
-            _userRepository.Update(user, id);
-        }
+        //public Result<object> UpdateUser(USER user, int id)
+        //{
+        //    _userRepository.Update(user, id);
+        //}
 
-        public void DeleteUser(int id)
-        {
-            _userRepository.Delete(id);
-        }
+        //public Result<object> DeleteUser(int id)
+        //{
+        //    _userRepository.Delete(id);
+        //}
     }
 }
  

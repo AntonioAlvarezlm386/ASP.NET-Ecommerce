@@ -1,18 +1,15 @@
-﻿using EntityLayer;
-using System;
+﻿using BussinesLayer.Common;
+using EntityLayer;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BussinesLayer.Interfaces
 {
     public interface IUserService
     {
-        IEnumerable<USER> GetAllUsers();
-        USER GetUserById(int id);
-        void CreateUser(USER user);
-        void UpdateUser(USER user, int id);
-        void DeleteUser(int id);
+        Result<List<USER>> GetAllUsers();
+        Result<USER> GetUserById(int id);
+        //Result<object> CreateUser(USER user);
+        //Result<object> UpdateUser(USER user, int id);
+        //Result<object> DeleteUser(int id);
     }
 }

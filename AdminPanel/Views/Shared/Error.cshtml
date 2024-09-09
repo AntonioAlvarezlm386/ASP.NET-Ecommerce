@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    var errorDetails = ViewBag.ErrorDetails;
+}
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -7,7 +9,16 @@
 <body>
     <hgroup>
         <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
+        <h2>Un error ocurrió al procesar la solicitud.</h2>
+        <p>Mensaje: @ViewBag.ErrorMessage</p>
+        <h4>Detalles: </h4>
+        <ul>
+            @foreach (var detail in errorDetails)
+            {
+                <li>@detail</li>
+            }
+        </ul>
+        <p>Inner exception: @ViewBag.InnerException.Message</p>
     </hgroup>
 </body>
 </html>

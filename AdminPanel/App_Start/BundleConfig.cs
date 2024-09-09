@@ -4,7 +4,6 @@ namespace AdminPanel
 {
     public class BundleConfig
     {
-        // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new Bundle("~/bundles/jquery").Include(
@@ -12,19 +11,17 @@ namespace AdminPanel
 
             bundles.Add(new Bundle("~/bundles/complementos").Include(
                         "~/Scripts/fontawesome/all.min.js",
+                        "~/Scripts/DataTables/jquery.dataTables.min.js",
+                        "~/Scripts/DataTables/dataTables.responsive.min.js",
                         "~/Scripts/scripts.js"));
-
-
-            //// Use the development version of Modernizr to develop with and learn from. Then, when you're
-            //// ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
-            //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-            //            "~/Scripts/modernizr-*"));
 
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.bundle.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/site.css"));
+                        "~/Content/site.css",
+                        "~/Content/DataTables/css/jquery.dataTables.min.css",
+                        "~/Content/DataTables/css/responsive.dataTables.min.css"));
         }
     }
 }

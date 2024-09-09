@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @*Scripts.Render("~/bundles/modernizr")*@
 </head>
-<body class="sb-nav-fixed"> 
+<body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="@Url.Action("Index", "Home")">Admin panel</a>
@@ -30,27 +30,27 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Home</div>
+                        <div class="sb-sidenav-menu-heading">Inicio</div>
                         <a class="nav-link" href="@Url.Action("Index", "Home")">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
                         <a class="nav-link" href="@Url.Action("Users", "Home")">
                             <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                            Users
+                            Usuarios
                         </a>
-                        <div class="sb-sidenav-menu-heading">Management</div>
+                        <div class="sb-sidenav-menu-heading">Administracion</div>
                         <a class="nav-link" href="@Url.Action("Category", "Management")">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Categories
+                            Categorias
                         </a>
                         <a class="nav-link" href="@Url.Action("Brand", "Management")">
                             <div class="sb-nav-link-icon"><i class="fas fa-bookmark"></i></div>
-                            Brands
+                            Marcas
                         </a>
                         <a class="nav-link" href="@Url.Action("Product", "Management")">
                             <div class="sb-nav-link-icon"><i class="fas fa-boxes"></i></div>
-                            Products
+                            Productos
                         </a>
                     </div>
                 </div>
@@ -67,13 +67,13 @@
                 </div>
             </main>
             <footer>
-                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                <p>&copy; @DateTime.Now.Year - Panel de administración</p>
             </footer>
         </div>
     </div>
 
-    @Scripts.Render("~/bundles/complementos")
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/complementos")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

@@ -14,13 +14,13 @@ namespace AdminPanel
     {
         public static void RegisterComponents()
         {
-			var container = new UnityContainer();
+            var container = new UnityContainer();
 
             container.RegisterType<AppDBContext>(new HierarchicalLifetimeManager());
 
 
             container.RegisterType<IProductService, ProductService>();
-            container.RegisterType<IProductRepository, ProductRepository>();
+            //container.RegisterType<IProductRepository, ProductRepository>();
 
             container.RegisterType<IUserRepository, UserRepository>();
             container.RegisterType<IUserService, UserService>();

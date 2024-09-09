@@ -21,80 +21,43 @@ namespace DataLayer.Repositorios
 
         public IEnumerable<USER> GetAll()
         {
-                return _context.USER.ToList();
+            return _context.USER.ToList();
         }
 
         public USER GetById(int id)
         {
-            try
-            {
-                USER userDb = _context.USER.Find(id);
-                return userDb;
-            } catch(Exception ex)
-            {
-                return null;
-            }
+            return _context.USER.Find(id);
         }
 
-        public bool Create(USER user)
+        public void Create(USER user)
         {
-            try
+            _context.USER.Add(user);
+            _context.SaveChanges();
+
+        }
+
+        public void Update(USER user, int id)
+        {
+            USER userDb = _context.USER.Find(id);
+            if (userDb != null)
             {
-                _context.USER.Add(user);
+                userDb.NAME = user.NAME;
+                userDb.LAST_NAME = user.LAST_NAME;
+                userDb.EMAIL = user.EMAIL;
+                userDb.PASSWORD = user.PASSWORD;
+                userDb.ACTIVE = user.ACTIVE;
+
                 _context.SaveChanges();
-
-                return true;
-            } catch (Exception ex)
-            {
-                return false;
             }
         }
 
-        public bool Update(USER user, int id)
+        public void Delete(int id)
         {
-            try
+            USER userDB = _context.USER.Find(id);
+            if(userDB != null)
             {
-                USER userDb = _context.USER.Find(id);
-                if (userDb != null)
-                {
-                    userDb.NAME = user.NAME;
-                    userDb.LASTTNAME = user.LASTTNAME;
-                    userDb.EMAIL = user.EMAIL;
-                    userDb.PASSWORD = user.PASSWORD;
-                    userDb.ACTIVE = user.ACTIVE;
-
-                    _context.SaveChanges();
-
-
-                    return true;
-                } else
-                {
-                    return false;
-                }
-            } catch (Exception ex)
-            {
-                return false;
-            }
-        }
-
-        public bool Delete(int id)
-        {
-            try
-            {
-                USER userDB = _context.USER.Find(id);
-                if(userDB != null)
-                {
-                    _context.USER.Remove(userDB);
-                    _context.SaveChanges();
-
-                    return true;
-                } else
-                {
-                    return false;
-                }
-            } catch (Exception ex)
-            {
-                return false;
+                _context.USER.Remove(userDB);
+                _context.SaveChanges();
             }
         }
     }

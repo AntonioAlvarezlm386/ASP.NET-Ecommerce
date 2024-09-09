@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BussinesLayout.Common
+namespace BussinesLayer.Common
 {
     public class Result<T>
     {
@@ -14,6 +11,7 @@ namespace BussinesLayout.Common
 
         public int StatusCode { get; private set; }
         public List<string> ErrorDetails { get; private set; } = new List<string>();
+        public Exception InnerException { get; private set; }
         public string Severity { get; private set; }
         public string StackTrace { get; private set; }
         public string ErrorCode { get; private set; }
@@ -47,6 +45,7 @@ namespace BussinesLayout.Common
                 Severity = serverity,
                 StackTrace = ex?.StackTrace,
                 ErrorDetails = ex != null ? new List<string> { ex.Message } : new List<string>(),
+                InnerException = ex != null ? ex.InnerException : null,
                 ExecutionTime = executionTime
             };
         }
